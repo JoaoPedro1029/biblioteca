@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Livros</title>
+    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+</head>
+<body>
+<div class="form-container">
 <?php
 session_start();
 include ('../../config.php'); // Inclui o arquivo de configuração
@@ -26,7 +37,7 @@ if (!empty($searchQuery) && !empty($searchType)) {
 
     // Executa a requisição e armazena a resposta
     $response = curl_exec($ch);
-
+    // var_dump($response);
     // Checa se houve erro na requisição
     if (curl_errno($ch)) {
         echo 'Erro: ' . curl_error($ch);
@@ -38,18 +49,20 @@ if (!empty($searchQuery) && !empty($searchType)) {
     // Decodifica a resposta JSON
     $data = json_decode($response, true);
 
-    $quantidade = count($data);
+    $quantidade = isset($data['items']) ? count($data['items']) : 0;
 
-    // var_dump($response);
+    var_dump($apiUrl);
 
     // Verifica se o livro foi encontrado
-    if (isset($data['items']) && count($data['items']) > 0) {
-        
-        for ($i = 0; $i < count($data['items']); $i++) {
+    if ($quantidade >= 0) {
+        echo "<div class='results-count'>Foram encontrados $quantidade resultados.</div>";
+        // var_dump($data);
+        for ($i = 0; $i <= $quantidade; $i++) {
         $book = $data['items'][$i]; // A primeira correspondência de livro
 
-        // Exibe informações sobre o livro
+        // Exibe as informações do livro com separação em divs
         $title= $book['volumeInfo']['title'];
+        var_dump($title);
         $authors= isset($book['volumeInfo']['authors']) ? implode(', ', $book['volumeInfo']['authors']) : 'Não cadastrado'; // Exibe autores se houver
         $publisher = isset($book['volumeInfo']['publisher']) ? $book['volumeInfo']['publisher'] : 'Não cadastrado'; // Exibe editora se houver
         $publishedDate = isset($book['volumeInfo']['publishedDate']) ? $book['volumeInfo']['publishedDate'] : 'Não cadastrado';
@@ -58,36 +71,38 @@ if (!empty($searchQuery) && !empty($searchType)) {
         $pageCount = isset($book['volumeInfo']['pageCount']) ? $book['volumeInfo']['pageCount'] : 'Não cadastrado';
         $thumbnail = isset($book['volumeInfo']['imageLinks']['thumbnail']) ? $book['volumeInfo']['imageLinks']['thumbnail'] : 'Capa não encontrada';
 
-        // Exibe as informações do livro
         echo "<h1>Informações sobre o Livro</h1>";
-        echo "<strong>Título:</strong> $title<br>";
-        echo "<strong>Autor(es):</strong> $authors<br>";
-        echo "<strong>Editora:</strong> $publisher<br>";
-        echo "<strong>Data de publicação:</strong> $publishedDate<br>";
-        echo "<strong>Páginas:</strong> $pageCount<br>";
-        echo "<strong>Descrição:</strong> $description<br>";
+        echo "<div class='book-info-item'><strong>Título:</strong> $title</div>";
+        echo "<div class='book-info-item'><strong>Autor(es):</strong> $authors</div>";
+        echo "<div class='book-info-item'><strong>Editora:</strong> $publisher</div>";
+        echo "<div class='book-info-item'><strong>Data de publicação:</strong> $publishedDate</div>";
+        echo "<div class='book-info-item'><strong>Páginas:</strong> $pageCount</div>";
+        echo "<div class='book-info-item'><strong>Descrição:</strong> $description</div>";
         $_SESSION['title'] = $title;
+        var_dump($_SESSION['title']);
         $_SESSION['author'] = $authors;
         $_SESSION['isbn'] = $isbn;
         
-        // Exibe a imagem da capa (se disponível)
         if ($thumbnail) {
-            echo "<img src='$thumbnail' alt='Capa do livro'><br>";
+            echo "<div class='book-info-item'><img src='$thumbnail' alt='Capa do livro'></div>";
         }
         ?>
-        <input type="hidden" name="title" value="<?php echo $title; ?>">
-                    <!-- Formulário para cadastrar um novo livro -->
-            <form method="POST" action="./criar_lv.php"> <!-- Altere o caminho conforme necessário -->
-                <button type="submit">Cadastrar Novo Livro</button>
-            </form>
+        <form method="POST" action="./criar_lv.php">
+            <input type="hidden" name="title" value="<?php echo $title; ?>">
+            <input type="hidden" name="authors" value="<?php echo $authors; ?>">
+            <input type="hidden" name="isbn" value="<?php echo $isbn; ?>">
+            <button class="btn-custom" type="submit">Cadastrar Novo Livro</button>
+        </form>
 
 <?php
         }
     } else {
-        echo "Livro não encontrado para a busca: $searchQuery"; // Mensagem se nenhum livro for encontrado
+        echo "Livro não encontrado para a busca: $searchQuery";
     }
 } else {
-    // echo "Por favor, preencha todos os campos de busca."; // Mensagem se os campos não forem preenchidos
+    // echo "Por favor, preencha todos os campos de busca.";
 }
 ?>
-
+</div>
+</body>
+</html>
