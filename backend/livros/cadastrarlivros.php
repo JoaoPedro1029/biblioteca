@@ -51,18 +51,18 @@ if (!empty($searchQuery) && !empty($searchType)) {
 
     $quantidade = isset($data['items']) ? count($data['items']) : 0;
 
-    var_dump($apiUrl);
+    // var_dump($apiUrl);
 
     // Verifica se o livro foi encontrado
     if ($quantidade >= 0) {
         echo "<div class='results-count'>Foram encontrados $quantidade resultados.</div>";
-        // var_dump($data);
-        for ($i = 0; $i <= $quantidade; $i++) {
+        
+        for ($i = 0; $i < $quantidade; $i++) {
         $book = $data['items'][$i]; // A primeira correspondência de livro
 
         // Exibe as informações do livro com separação em divs
         $title= $book['volumeInfo']['title'];
-        var_dump($title);
+        // var_dump($title);
         $authors= isset($book['volumeInfo']['authors']) ? implode(', ', $book['volumeInfo']['authors']) : 'Não cadastrado'; // Exibe autores se houver
         $publisher = isset($book['volumeInfo']['publisher']) ? $book['volumeInfo']['publisher'] : 'Não cadastrado'; // Exibe editora se houver
         $publishedDate = isset($book['volumeInfo']['publishedDate']) ? $book['volumeInfo']['publishedDate'] : 'Não cadastrado';
@@ -78,10 +78,10 @@ if (!empty($searchQuery) && !empty($searchType)) {
         echo "<div class='book-info-item'><strong>Data de publicação:</strong> $publishedDate</div>";
         echo "<div class='book-info-item'><strong>Páginas:</strong> $pageCount</div>";
         echo "<div class='book-info-item'><strong>Descrição:</strong> $description</div>";
-        $_SESSION['title'] = $title;
-        var_dump($_SESSION['title']);
-        $_SESSION['author'] = $authors;
-        $_SESSION['isbn'] = $isbn;
+        // $_SESSION['title'] = $title;
+        // var_dump($_SESSION['title']);
+        // $_SESSION['author'] = $authors;
+        // $_SESSION['isbn'] = $isbn;
         
         if ($thumbnail) {
             echo "<div class='book-info-item'><img src='$thumbnail' alt='Capa do livro'></div>";
