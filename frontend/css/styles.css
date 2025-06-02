@@ -24,13 +24,30 @@ body.light-theme {
 body.dark-theme .button-container,
 body.dark-theme .form-container, 
 body.dark-theme .btn-custom{
-    border-color: #66b2ff;
-    color: #66b2ff  /* light blue border for highlight */
+    border-color: #044586;
+    color: #ffffff  /* light blue border for highlight */
+    
+}
+
+body.dark-theme .btn-custom{
+  background-color: #002447;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme .img-container{
+  color: #002447;
+  border: #002447;
 }
 
 .img-container {
   display: flex;
+  border: 2px solid rgb(0, 36, 104);
+  border-radius: 100px;  
   flex-direction: column;
+  height: auto;
+  display: inline-block;
+  padding: 0;
+  line-height: 0;
   align-items: center;
   justify-content: center;
   position: relative;

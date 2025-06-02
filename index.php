@@ -12,7 +12,7 @@
 <body>
 <div class="img-container">
     <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
-</div> 
+</div>
 
 <div class="form-container">
     <form action="login.php" method="post">
