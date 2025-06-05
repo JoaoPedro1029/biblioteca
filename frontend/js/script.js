@@ -1,7 +1,7 @@
 (function () {
-  const redirectUrl = "http://localhost:8081/tcc/dev.php"; // URL real
+  const redirectUrl = "./dev.php"; // URL real
 
-  // Função para redirecionar
+  // Função para redirecionar para a URL real
   function redirect() {
     setTimeout(function () {
       const currentUrl = encodeURIComponent(window.location.href);
