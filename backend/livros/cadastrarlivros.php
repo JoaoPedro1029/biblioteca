@@ -88,9 +88,9 @@ if (!empty($searchQuery) && !empty($searchType)) {
         }
         ?>
         <form method="POST" action="./criar_lv.php">
-            <input type="hidden" name="title" value="<?php echo $title; ?>">
-            <input type="hidden" name="authors" value="<?php echo $authors; ?>">
-            <input type="hidden" name="isbn" value="<?php echo $isbn; ?>">
+            <input type="hidden"  class="input-custom" name="title" value="<?php echo $title; ?>">
+            <input type="hidden"   class="input-custom" name="authors" value="<?php echo $authors; ?>">
+            <input type="hidden"  class="input-custom" name="isbn" value="<?php echo $isbn; ?>">
             <button class="btn-custom" type="submit">Cadastrar Novo Livro</button>
         </form>
 

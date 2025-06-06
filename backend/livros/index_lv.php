@@ -27,7 +27,7 @@
                     <br>
 
                     <label for="searchValue">Valor da busca:</label>
-                <input type="text" name="searchValue" id="searchValue" class="form-control">
+                <input type="text"  class="input-custom" name="searchValue" id="searchValue" class="form-control">
             <br>
 
             <button type="submit" class="btn-custom">Pesquisar Livro</button>
