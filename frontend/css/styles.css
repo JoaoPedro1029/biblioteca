@@ -46,8 +46,8 @@ body.dark-theme .img-container{
 
 .img-container {
   display: flex;
-  border: 2px solid rgb(0, 36, 104);
-  border-radius: 100px;  
+  /* border: 2px solid rgb(0, 36, 104);
+  border-radius: 100px;   */
   flex-direction: column;
   height: auto;
   display: inline-block;
