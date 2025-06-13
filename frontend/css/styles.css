@@ -28,11 +28,14 @@ body.dark-theme .btn-custom{
     color: #ffffff  /* light blue border for highlight */
     
 }
+
 body.dark-theme .input-custom {
   padding: 10px;
   border: 2px solid rgb(0, 140, 255); /* Cor da borda */
   border-radius: 15px; /* Bordas arredondadas */
 }
+
+
 
 body.dark-theme .btn-custom{
   background-color: #002447;
@@ -46,6 +49,7 @@ body.dark-theme .img-container{
 
 .img-container {
   display: flex;
+
   /* border: 2px solid rgb(0, 36, 104);
   border-radius: 100px;   */
   flex-direction: column;

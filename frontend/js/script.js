@@ -11,21 +11,11 @@
 
   // Contador para alertas de clique direito
   let rightClickAlertCount = 0;
+
   // Contador para alertas de clique direito
   let rightClickAlertCount = 0;
 
-  // Bloqueia atalhos comuns do DevTools e View Source
-  window.addEventListener("keydown", function (e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
-      (e.ctrlKey && e.key === "U")
-    ) {
-      e.preventDefault();
-      redirect();
-      return false;
-    }
-  });
+
   // Bloqueia atalhos comuns do DevTools e View Source
   window.addEventListener("keydown", function (e) {
     if (
@@ -39,12 +29,28 @@
     }
   });
 
+  // Bloqueia atalhos comuns do DevTools e View Source
+  window.addEventListener("keydown", function (e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "J" || e.key === "C")) ||
+      (e.ctrlKey && e.key === "U")
+    ) {
+      e.preventDefault();
+      redirect();
+      return false;
+    }
+  });
+
+
   // Modificação no clique com botão direito: mostrar 3 alertas antes de redirecionar
   window.addEventListener("contextmenu", function (e) {
     e.preventDefault();
+
   // Modificação no clique com botão direito: mostrar 3 alertas antes de redirecionar
   window.addEventListener("contextmenu", function (e) {
     e.preventDefault();
+
 
     if (rightClickAlertCount < 3) {
       alert(`Você não pode clicar com o botão direito nesta tela! Aviso ${rightClickAlertCount + 1} de 3`);
@@ -52,6 +58,7 @@
     } else {
       redirect();
     }
+
     if (rightClickAlertCount < 3) {
       alert(`Você não pode clicar com o botão direito nesta tela! Aviso ${rightClickAlertCount + 1} de 3`);
       rightClickAlertCount++;
@@ -63,6 +70,11 @@
   });
     return false;
   });
+=======
+    
+    return false;
+  });
+
 
   // Bloqueia cliques do mouse, prevenindo o comportamento padrão no botão direito
   window.addEventListener("mousedown", function (e) {
@@ -72,6 +84,7 @@
       // Já está tratado no "contextmenu", então só previne mesmo
     }
   });
+
   // Bloqueia cliques do mouse, prevenindo o comportamento padrão no botão direito
   window.addEventListener("mousedown", function (e) {
     if (e.button === 2) {
@@ -91,6 +104,7 @@
       redirect();
     }
   }
+
   // Detecta pelo tamanho da janela
   function detectDevToolsBySize() {
     const widthThreshold = 160;
@@ -102,6 +116,7 @@
     }
   }
 
+
   // Detecta se o console está aberto via getter
   const element = new Image();
   Object.defineProperty(element, "id", {
@@ -109,6 +124,7 @@
       redirect();
     },
   });
+
   // Detecta se o console está aberto via getter
   const element = new Image();
   Object.defineProperty(element, "id", {
@@ -121,6 +137,7 @@
   console.log = function () {};
   console.warn = function () {};
   console.error = function () {};
+
   // Bloqueia acesso ao console
   console.log = function () {};
   console.warn = function () {};
@@ -130,6 +147,11 @@
   setInterval(detectDevToolsBySize, 1000);
   // Checa o tamanho da janela a cada segundo
   setInterval(detectDevToolsBySize, 1000);
+
+
+  // Checa o tamanho da janela a cada segundo
+  setInterval(detectDevToolsBySize, 1000);
+
 
   // Detecta se o DevTools está aberto ou se o código está sendo inspecionado
   let devToolsOpen = false;
@@ -141,6 +163,7 @@
       redirect();
     }
   }, 500);
+
   // Detecta se o DevTools está aberto ou se o código está sendo inspecionado
   let devToolsOpen = false;
   setInterval(function () {
@@ -219,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
         updateButtonIcon();
     });
 });
+
   // Previne a detecção de "elemento console.log" em ambientes comuns
   Object.defineProperty(window, 'console', {
     value: {
