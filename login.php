@@ -16,6 +16,7 @@
     // Executa a consulta com os valores fornecidos
     if (password_verify($senha, $result [0] ["senha"])) {
         $_SESSION['nome'] = $result[0]["nome"];
+        $_SESSION['id'] = $result[0]["id"];
        header("location: inicial.php"); 
     } else {
         echo "senha ou CPF incorreto.";
