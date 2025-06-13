@@ -19,10 +19,10 @@
     <h1> Login </h1>
     <br>
         <label for="cpf"></label>
-        <input type="text" placeholder="Digite seu CPF" maxlength = "11" minlength="11" id="cpf" name="cpf" required><br>
+        <input type="text"  class="input-custom" placeholder="Digite seu CPF" maxlength = "11" minlength="11" id="cpf" name="cpf" required><br>
         <br>
         <div class="password-container">  
-            <input type="password" placeholder = "DIgite sua senha"  minlength="8" maxlength="255" id="senha" name="senha" required>
+            <input type="password"  class="input-custom" placeholder = "DIgite sua senha"  minlength="8" maxlength="255" id="senha" name="senha" required>
             <span id="toggle-password" class="eye-icon">👁️</span>
         </div> 
 

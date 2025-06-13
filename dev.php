@@ -2,10 +2,11 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="frontend/css/styles.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Devtools desabilitado!</title>
-  <style>
-    /* Reset and base styles */
+  <!-- <style>
+  
     * {
       margin: 0;
       padding: 0;
@@ -122,13 +123,29 @@
         padding: 10px 28px;
         margin-top: 18px;
       }
-    }
+    } -->
   </style>
 </head>
 <body>
-  <canvas id="background-canvas"></canvas>
-  <div id="welcome-container" aria-label="Mensagem de boas vindas">Não foi possível abrir o Devtools</div>
-  <a id="redirect-button" href="./inicial.php" aria-label="Ir para próxima página">Voltar</a>
+<!-- 
+<div class="button-container"></div> -->
+<div class="button-container">
+  <div id="welcome-container" class="form-container" aria-label="Mensagem de boas-vindas">
+   Função desabilitada pelo admin
+  </div>
+  <a id="redirect-button" class="btn-custom" href="./inicial.php" aria-label="Ir para próxima página">Voltar</a>
+</div>
+
+<style>
+  .button-container {
+    color: #000000;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura do container como 100% da altura da tela */
+  }
+</style>
+
   <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
   <script>
     (function() {
@@ -148,87 +165,6 @@
         }
       }
     })();
-
-    // Initialize tsParticles for animated background: floating glowing grayish white bubbles
-    tsParticles.load("background-canvas", {
-      fullScreen: false,
-      background: {
-        color: "transparent"
-      },
-      fpsLimit: 60,
-      interactivity: {
-        detectsOn: "canvas",
-        events: {
-          onHover: {
-            enable: true,
-            mode: "repulse"
-          },
-          resize: true
-        },
-        modes: {
-          repulse: {
-            distance: 100,
-            duration: 0.4
-          }
-        }
-      },
-      particles: {
-        color: {
-          value: "#666666"
-        },
-        links: {
-          enable: false
-        },
-        collisions: {
-          enable: false
-        },
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: "out",
-          random: true,
-          speed: 1.3,
-          straight: false
-        },
-        number: {
-          density: {
-            enable: true,
-            area: 800
-          },
-          value: 55
-        },
-        opacity: {
-          value: 0.45,
-          random: {
-            enable: true,
-            minimumValue: 0.2
-          },
-          anim: {
-            enable: true,
-            speed: 1,
-            opacity_min: 0.15,
-            sync: false
-          }
-        },
-        shape: {
-          type: "circle"
-        },
-        size: {
-          value: 3.5,
-          random: {
-            enable: true,
-            minimumValue: 1
-          },
-          anim: {
-            enable: true,
-            speed: 3,
-            size_min: 0.5,
-            sync: false
-          }
-        }
-      },
-      detectRetina: true
-    });
-  </script>
+    </script>
 </body>
 </html>

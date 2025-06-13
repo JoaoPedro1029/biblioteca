@@ -18,18 +18,18 @@
     <h1>Adicionar Novo Professor</h1>
     <form action="./criar_prof.php" method="post">
         <label for="nome">Nome:</label>
-        <input type="text" minlength="5" maxlength="40" id="nome" name="nome" required><br>
+        <input type="text"  class="input-custom" minlength="5" maxlength="40" id="nome" name="nome" required><br>
 
         <label for="cpf">CPF:</label>
-        <input type="text" maxlength="11" minlength="11" id="cpf" name="cpf" required><br>
+        <input type="text"  class="input-custom" maxlength="11" minlength="11" id="cpf" name="cpf" required><br>
 
         <label for="email">Email:</label>
-        <input type="email" minlength="10" maxlength="40" id="email" name="email" required><br>
+        <input type="email"  class="input-custom" minlength="10" maxlength="40" id="email" name="email" required><br>
 
         <label for="senha">Senha:</label>
         <br>
         <div class="password-container">
-            <input type="password" minlength="8" maxlength="32" id="senha" name="senha" required>
+            <input type="password"  class="input-custom" minlength="8" maxlength="32" id="senha" name="senha" required>
             <span id="toggle-password" class="eye-icon">👁️</span>
         </div>
         

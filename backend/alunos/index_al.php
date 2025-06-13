@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../frontend/css/styles.css">
 </head>
 <body class="container">
-<script src="../../frontend/css/script.js"></script> 
+<script src="../../frontend/js/script.js"></script> 
     <div class="img-container">
         <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
     </div> 
@@ -17,13 +17,13 @@
         <h1>Adicionar Novo Aluno</h1>
         <form action="criar_al.php" method="post">
             <label for="nome">Nome:</label>
-            <input type="text"  minlength="5" maxlength="40" id="nome" name="nome" required><br>
+            <input type="text"  class="input-custom" minlength="5" maxlength="40" id="nome" name="nome" required><br>
 
             <label for="serie">Série:</label>
-            <input type="text" minlength="2" maxlength="2" id="serie" name="serie" required><br>
+            <input type="text"  class="input-custom" minlength="2" maxlength="2" id="serie" name="serie" required><br>
 
             <label for="email">Email:</label>
-            <input type="email" minlength="10" maxlength="50" id="email" name="email" required><br>
+            <input type="email"  class="input-custom" minlength="10" maxlength="50" id="email" name="email" required><br>
 
             <button type="submit" class="btn-custom">Adicionar Aluno</button>
         </form>

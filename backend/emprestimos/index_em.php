@@ -16,19 +16,19 @@
         <h1>Adicionar Empréstimo</h1>
         <form method="POST" action="./criar_em.php">
             <label for="aluno_nome">Nome do Aluno:</label>
-            <input type="text" name="aluno_id" id="aluno_id" required><br>
+            <input type="text"  class="input-custom"  name="aluno_id" id="aluno_id" required><br>
 
             <label for="livro_nome">Nome do Livro:</label>
-            <input type="text" name="livro_id" id="livro_id" required><br>
+            <input type="text"  class="input-custom"  name="livro_id" id="livro_id" required><br>
 
             <div class="input-container">
                 <label for="data_retirada">Data de Retirada:</label>
-                <input type="date" name="data_retirada" id="data_retirada" required>
+                <input type="date"  class="input-custom"  name="data_retirada" id="data_retirada" required>
             </div>
 
             <div class="input-container">
                 <label for="data_devolucao">Data de Devolução:</label>
-                <input type="date" name="data_devolucao" id="data_devolucao" required>
+                <input type="date"  class="input-custom" name="data_devolucao" id="data_devolucao" required>
             </div>
 
             <button type="submit" class="btn-custom">Criar Empréstimo</button>

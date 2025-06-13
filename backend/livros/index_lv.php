@@ -7,7 +7,14 @@
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../frontend/css/styles.css">
     <script src="../../frontend/js/script.js"></script> 
-    
+    <style>
+        .btn-custom{
+            width: 85%;
+            height: 60px;
+            margin: 25px;
+        }
+
+    </style>
 </head>
 <body class="container">
 
@@ -27,7 +34,7 @@
                     <br>
 
                     <label for="searchValue">Valor da busca:</label>
-                <input type="text" name="searchValue" id="searchValue" class="form-control">
+                <input type="text"  class="input-custom" name="searchValue" id="searchValue" class="form-control">
             <br>
 
             <button type="submit" class="btn-custom">Pesquisar Livro</button>
