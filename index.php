@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="frontend/css/styles.css">
     <script src="./frontend/js/script.js"></script> 
 </head>
 <body>
 <div class="img-container">
     <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
-</div> 
+</div>
 
 <div class="form-container">
     <form action="login.php" method="post">
@@ -28,6 +29,8 @@
         <button type="submit" class="btn-custom">login</button>
     </form>
 </div>
+
+<!-- Theme toggle button will be added dynamically by script.js -->
 
 <script>
     // Obter o campo de senha e o ícone do olho
