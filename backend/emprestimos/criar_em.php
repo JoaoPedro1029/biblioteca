@@ -13,7 +13,8 @@
 include ('../../config.php'); // Inclua seu arquivo de conexão
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $aluno_id = $_POST['aluno_id'];
+    $aluno_id = $_POST['aluno_nome'];
+    $professor_id = $_SESSION['id'];
     $livro_nome = $_POST['livro_id']; // Supondo que você está passando o nome do livro
     $data_retirada = $_POST['data_retirada'];
     $data_devolucao = $_POST['data_devolucao'];
@@ -33,25 +34,29 @@ if (count($result_livro) > 0) {
     $livro_id = $result_livro[0]['id']; // Obter o ID do livro
 
     // Inserir o empréstimo no banco de dados
-    $query_emprestimo = "INSERT INTO emprestimos (aluno_id, livro_id, data_retirada, data_devolucao) VALUES (:aluno_id, :livro_id, :data_retirada, :data_devolucao)";
+    $query_emprestimo = "INSERT INTO emprestimos (aluno_id, professor_id, livro_id, data_retirada, data_devolucao) VALUES (:aluno_id, :professor_id, :livro_id, :data_retirada, :data_devolucao)";
     $stmt_emprestimo = $conn->prepare($query_emprestimo);
     
     if ($stmt_emprestimo === false) {
         die("Erro na preparação da inserção: " . implode(", ", $conn->errorInfo()));
     }
-    
+    var_dump($aluno_id);
     // Vincular os parâmetros
     $stmt_emprestimo->bindValue(':aluno_id', $aluno_id, PDO::PARAM_INT);
+    $stmt_emprestimo->bindValue(':professor_id', $professor_id, PDO::PARAM_STR);
     $stmt_emprestimo->bindValue(':livro_id', $livro_id, PDO::PARAM_INT);
     $stmt_emprestimo->bindValue(':data_retirada', $data_retirada, PDO::PARAM_STR);
     $stmt_emprestimo->bindValue(':data_devolucao', $data_devolucao, PDO::PARAM_STR);
-    
+
+   
+
     if ($stmt_emprestimo->execute()) {
         echo "<div class='form-container'>Empréstimo criado com sucesso!</div>";
     } else {
         echo "<div class='form-container'>Erro ao criar empréstimo: " . implode(", ", $stmt_emprestimo->errorInfo()) . "</div>";
     }
-    
+ 
+
     // Liberar a declaração
     $stmt_emprestimo = null;
     

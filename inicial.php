@@ -13,7 +13,7 @@ session_start();
     <link rel="stylesheet" href="frontend/css/styles.css">
 </head>
 <body class="container">
-<script src="./frontend/js/script.js"></script> 
+<!-- <script src="./frontend/js/script.js"></script>  -->
 
     <div class="img-container">
         <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">

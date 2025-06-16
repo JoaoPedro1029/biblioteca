@@ -16,7 +16,7 @@
         <h1>Adicionar Empréstimo</h1>
         <form method="POST" action="./criar_em.php">
             <label for="aluno_nome">Nome do Aluno:</label>
-            <input type="text"  class="input-custom"  name="aluno_id" id="aluno_id" required><br>
+            <input type="text"  class="input-custom"  name="aluno_nome" id="aluno_nome" required><br>
 
             <label for="livro_nome">Nome do Livro:</label>
             <input type="text"  class="input-custom"  name="livro_id" id="livro_id" required><br>

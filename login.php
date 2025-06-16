@@ -7,7 +7,6 @@
     $senha = $_POST['senha'];
 
 
-    // Prepara a consulta SQL para inserir um novo registro na tabela 'livro' com os valores fornecidos
     $stmt = $conn->prepare("SELECT * FROM professores WHERE cpf = :cpf");
     $stmt->execute([':cpf' => $cpf]);
     
