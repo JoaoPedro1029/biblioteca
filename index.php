@@ -6,27 +6,25 @@
     <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="frontend/css/styles.css">
+    <link rel="stylesheet" href="frontend/styles.css">
     <script src="./frontend/js/script.js"></script> 
 </head>
 <body>
-<div class="img-container">
+<div class="logo-container">
     <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
 </div>
 
-<div class="form-container">
+<div class="container">
     <form action="login.php" method="post">
     <h1> Login </h1>
-    <br>
         <label for="cpf"></label>
-        <input type="text"  class="input-custom" placeholder="Digite seu CPF" maxlength = "11" minlength="11" id="cpf" name="cpf" required><br>
-        <br>
-        <div class="password-container">  
-            <input type="password"  class="input-custom" placeholder = "DIgite sua senha"  minlength="8" maxlength="255" id="senha" name="senha" required>
-            <span id="toggle-password" class="eye-icon">👁️</span>
+        <input type="text" placeholder="Digite seu CPF" maxlength="11" minlength="11" id="cpf" name="cpf" required>
+        <div class="password-wrapper">  
+            <input type="password" placeholder="Digite sua senha" minlength="8" maxlength="255" id="senha" name="senha" required>
+            <span id="toggle-password" class="password-toggle">👁️</span>
         </div> 
 
-        <button type="submit" class="btn-custom">login</button>
+        <button type="submit">login</button>
     </form>
 </div>
 

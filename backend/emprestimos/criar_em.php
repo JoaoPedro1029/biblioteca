@@ -5,19 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Criar Empréstimo</title>
-    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <link rel="stylesheet" href="../../frontend/styles.css" />
 </head>
 <body>
 <?php
 // Conexão com o banco de dados
 include ('../../config.php'); // Inclua seu arquivo de conexão
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $aluno_id = $_POST['aluno_nome'];
-    $professor_id = $_SESSION['id'];
-    $livro_nome = $_POST['livro_id']; // Supondo que você está passando o nome do livro
-    $data_retirada = $_POST['data_retirada'];
-    $data_devolucao = $_POST['data_devolucao'];
+    $aluno_id = isset($_POST['aluno_id']) ? $_POST['aluno_id'] : null;
+    $professor_id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
+    $livro_nome = isset($_POST['livro_id']) ? $_POST['livro_id'] : null; // Supondo que você está passando o nome do livro
+    $data_retirada = isset($_POST['data_retirada']) ? $_POST['data_retirada'] : null;
+    $data_devolucao = isset($_POST['data_devolucao']) ? $_POST['data_devolucao'] : null;
+
+    // Validate required fields
+    if (empty($aluno_id)) {
+        die("<div class='container'>Erro: Aluno não selecionado. Por favor, selecione um aluno válido.</div>");
+    }
+    if (empty($professor_id)) {
+        die("<div class='container'>Erro: Usuário não autenticado. Por favor, faça login.</div>");
+    }
+    if (empty($livro_nome)) {
+        die("<div class='container'>Erro: Nome do livro não fornecido.</div>");
+    }
+    if (empty($data_retirada) || empty($data_devolucao)) {
+        die("<div class='container'>Erro: Datas de retirada e devolução são obrigatórias.</div>");
+    }
 }
 // Buscar ID do Livro
 $query_livro = "SELECT id FROM livros WHERE nome_livro LIKE :livro_nome";
@@ -51,9 +66,9 @@ if (count($result_livro) > 0) {
    
 
     if ($stmt_emprestimo->execute()) {
-        echo "<div class='form-container'>Empréstimo criado com sucesso!</div>";
+        echo "<div class='container'>Empréstimo criado com sucesso!</div>";
     } else {
-        echo "<div class='form-container'>Erro ao criar empréstimo: " . implode(", ", $stmt_emprestimo->errorInfo()) . "</div>";
+        echo "<div class='container'>Erro ao criar empréstimo: " . implode(", ", $stmt_emprestimo->errorInfo()) . "</div>";
     }
  
 
@@ -63,11 +78,11 @@ if (count($result_livro) > 0) {
     // Fechar a conexão
     $conn = null;
 } else {
-    echo "<div class='form-container'>Livro não encontrado</div>";
+    echo "<div class='container'>Livro não encontrado</div>";
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo "<div class='form-container'>Método de requisição inválido.</div>";
+    echo "<div class='container'>Método de requisição inválido.</div>";
 }
 ?>
 </body>

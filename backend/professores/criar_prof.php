@@ -30,11 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cadastro concluido</title>
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../frontend/css/styles.css">
+        <link rel="stylesheet" href="../../frontend/styles.css">
         <link rel="stylesheet" href="../../frontend/js/script.js">
     </head>
     <body>
-    <div class="form-container">
+    <div class="container">
       <h1>Professor cadastrado com sucesso!</h1>     
     </body>
 </html>

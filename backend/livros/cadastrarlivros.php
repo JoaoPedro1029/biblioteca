@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Livros</title>
-    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <link rel="stylesheet" href="../../frontend/styles.css" />
 </head>
 <body>
-<div class="form-container">
+<div class="container">
 <?php
 session_start();
 include ('../../config.php'); // Inclui o arquivo de configuração
@@ -88,10 +88,10 @@ if (!empty($searchQuery) && !empty($searchType)) {
         }
         ?>
         <form method="POST" action="./criar_lv.php">
-            <input type="hidden"  class="input-custom" name="title" value="<?php echo $title; ?>">
-            <input type="hidden"   class="input-custom" name="authors" value="<?php echo $authors; ?>">
-            <input type="hidden"  class="input-custom" name="isbn" value="<?php echo $isbn; ?>">
-            <button class="btn-custom" type="submit">Cadastrar Novo Livro</button>
+            <input type="hidden" name="title" value="<?php echo $title; ?>">
+            <input type="hidden" name="authors" value="<?php echo $authors; ?>">
+            <input type="hidden" name="isbn" value="<?php echo $isbn; ?>">
+            <button type="submit">Cadastrar Novo Livro</button>
         </form>
 
 <?php

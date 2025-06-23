@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="stylesheet" href="frontend/css/styles.css"/>
+  <link rel="stylesheet" href="frontend/styles.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Devtools desabilitado!</title>
   <!-- <style>
@@ -16,8 +16,8 @@
       height: 100%;
       overflow: hidden;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: rgb(166, 166, 166);
-      color: #000000;
+      background: rgb(245, 249, 249);
+      color: #333;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,29 +34,23 @@
       text-align: center;
       padding: 20px 40px;
       border-radius: 15px;
-      background: rgb(166, 166, 166);
+      background: #ffffff;
       backdrop-filter: blur(6px);
-      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
       animation: pulse 0s ease-in-out infinite;
       max-width: 90vw;
-      color: #000000;
-      text-shadow:
-        0 0 3px #444444,
-        0 0 6px #444444;
+      color: #333;
+      text-shadow: none;
       user-select: text;
     }
     @keyframes pulse {
       0%, 100% {
-        color: #000000;
-        text-shadow:
-          0 0 3px #444444,
-          0 0 6px #444444;
+        color: #333;
+        text-shadow: none;
       }
       50% {
-        color: #111111;
-        text-shadow:
-          0 0 6px #222222,
-          0 0 10px #222222;
+        color: #444;
+        text-shadow: none;
       }
     }
 
@@ -79,12 +73,12 @@
       padding: 12px 36px;
       font-size: 1.25rem;
       font-weight: 700;
-      color: #000000;
+      color: #2980b9;
       text-decoration: none;
-      background: rgb(166, 166, 166);
-      border: 2.5px solid rgb(166, 166, 166);
-      border-radius: 15px;
-      box-shadow: 0 0 8px #00000033;
+      background: #ecf6fc;
+      border: 2.5px solid #2980b9;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
       backdrop-filter: blur(6px);
       transition: all 0.3s ease;
       user-select: none;
@@ -99,17 +93,17 @@
     }
     #redirect-button:hover,
     #redirect-button:focus {
-      background: #f0f0f0;
+      background: #d0e6fb;
       box-shadow:
-        0 0 12px #00000066;
+        0 0 12px rgba(41, 128, 185, 0.6);
       outline: none;
       transform: scale(1.05);
     }
     #redirect-button:active {
       transform: scale(0.95);
       box-shadow:
-        0 0 6px #00000044;
-      background: #e0e0e0;
+        0 0 6px rgba(41, 128, 185, 0.4);
+      background: #b0d1f9;
     }
 
     /* Responsive font size */
@@ -128,12 +122,12 @@
 </head>
 <body>
 <!-- 
-<div class="button-container"></div> -->
-<div class="button-container">
-  <div id="welcome-container" class="form-container" aria-label="Mensagem de boas-vindas">
+<div class="button-group"></div> -->
+<div class="button-group">
+  <div id="welcome-container" class="container" aria-label="Mensagem de boas-vindas">
    Função desabilitada pelo admin
   </div>
-  <a id="redirect-button" class="btn-custom" href="./inicial.php" aria-label="Ir para próxima página">Voltar</a>
+  <a id="redirect-button" href="./inicial.php" aria-label="Ir para próxima página">Voltar</a>
 </div>
 
 <style>

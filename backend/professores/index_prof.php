@@ -5,35 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Novo Professor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-   <link rel="stylesheet" href = "../../frontend/css/styles.css">
+   <link rel="stylesheet" href = "../../frontend/styles.css">
 </head>
 <body class="container">
-    <div class="img-container">
+    <div class="logo-container">
         <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
     </div>
   <!-- Importa o arquivo JavaScript -->
   <!-- <script src="../../frontend/css/efeitos.js"></script> -->
      <script src="../../frontend/js/script.js"></script> 
-     <div class="button-container">
+     <div class="button-group">
     <h1>Adicionar Novo Professor</h1>
     <form action="./criar_prof.php" method="post">
         <label for="nome">Nome:</label>
-        <input type="text"  class="input-custom" minlength="5" maxlength="40" id="nome" name="nome" required><br>
+        <input type="text" minlength="5" maxlength="40" id="nome" name="nome" required>
 
         <label for="cpf">CPF:</label>
-        <input type="text"  class="input-custom" maxlength="11" minlength="11" id="cpf" name="cpf" required><br>
+        <input type="text" maxlength="11" minlength="11" id="cpf" name="cpf" required>
 
         <label for="email">Email:</label>
-        <input type="email"  class="input-custom" minlength="10" maxlength="40" id="email" name="email" required><br>
+        <input type="email" minlength="10" maxlength="40" id="email" name="email" required>
 
         <label for="senha">Senha:</label>
         <br>
-        <div class="password-container">
-            <input type="password"  class="input-custom" minlength="8" maxlength="32" id="senha" name="senha" required>
-            <span id="toggle-password" class="eye-icon">👁️</span>
+        <div class="password-wrapper">
+            <input type="password" minlength="8" maxlength="32" id="senha" name="senha" required>
+            <span id="toggle-password" class="password-toggle">👁️</span>
         </div>
         
-        <button type="submit" class="btn-custom">Adicionar Professor</button>
+        <button type="submit">Adicionar Professor</button>
     </form>
 </div>
 <script>
