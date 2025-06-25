@@ -83,54 +83,54 @@
   });
 })();
 
-// Theme toggle button with Bootstrap and icons
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleButton = document.createElement('button');
-  toggleButton.id = 'theme-toggle-button';
-  toggleButton.type = 'button';
-  toggleButton.className = 'btn btn-primary';
-  toggleButton.style.position = 'fixed';
-  toggleButton.style.top = '10px';
-  toggleButton.style.right = '10px';
-  toggleButton.style.zIndex = '1000';
-  toggleButton.style.padding = '10px 15px';
-  toggleButton.style.borderRadius = '5px';
-  toggleButton.style.border = 'none';
-  toggleButton.style.cursor = 'pointer';
+// // Theme toggle button with Bootstrap and icons
+// document.addEventListener('DOMContentLoaded', function () {
+//   const toggleButton = document.createElement('button');
+//   toggleButton.id = 'theme-toggle-button';
+//   toggleButton.type = 'button';
+//   toggleButton.className = 'btn btn-primary';
+//   toggleButton.style.position = 'fixed';
+//   toggleButton.style.top = '10px';
+//   toggleButton.style.right = '10px';
+//   toggleButton.style.zIndex = '1000';
+//   toggleButton.style.padding = '10px 15px';
+//   toggleButton.style.borderRadius = '5px';
+//   toggleButton.style.border = 'none';
+//   toggleButton.style.cursor = 'pointer';
 
-  const sunIconClass = 'bi bi-sun-fill';
-  const moonIconClass = 'bi bi-moon-fill';
+//   const sunIconClass = 'bi bi-sun-fill';
+//   const moonIconClass = 'bi bi-moon-fill';
 
-  const icon = document.createElement('i');
-  icon.className = sunIconClass;
-  toggleButton.appendChild(icon);
+//   const icon = document.createElement('i');
+//   icon.className = sunIconClass;
+//   toggleButton.appendChild(icon);
 
-  document.body.appendChild(toggleButton);
+//   document.body.appendChild(toggleButton);
 
-  const savedTheme = localStorage.getItem('theme') || 'light-theme';
-  document.body.classList.add(savedTheme);
+//   const savedTheme = localStorage.getItem('theme') || 'light-theme';
+//   document.body.classList.add(savedTheme);
 
-  function updateButtonIcon() {
-    if (document.body.classList.contains('dark-theme')) {
-      icon.className = moonIconClass;
-      toggleButton.title = 'Modo Escuro';
-    } else {
-      icon.className = sunIconClass;
-      toggleButton.title = 'Modo Claro';
-    }
-  }
-  updateButtonIcon();
+//   function updateButtonIcon() {
+//     if (document.body.classList.contains('dark-theme')) {
+//       icon.className = moonIconClass;
+//       toggleButton.title = 'Modo Escuro';
+//     } else {
+//       icon.className = sunIconClass;
+//       toggleButton.title = 'Modo Claro';
+//     }
+//   }
+//   updateButtonIcon();
 
-  toggleButton.addEventListener('click', function () {
-    if (document.body.classList.contains('dark-theme')) {
-      document.body.classList.remove('dark-theme');
-      document.body.classList.add('light-theme');
-      localStorage.setItem('theme', 'light-theme');
-    } else {
-      document.body.classList.remove('light-theme');
-      document.body.classList.add('dark-theme');
-      localStorage.setItem('theme', 'dark-theme');
-    }
-    updateButtonIcon();
-  });
-});
+//   toggleButton.addEventListener('click', function () {
+//     if (document.body.classList.contains('dark-theme')) {
+//       document.body.classList.remove('dark-theme');
+//       document.body.classList.add('light-theme');
+//       localStorage.setItem('theme', 'light-theme');
+//     } else {
+//       document.body.classList.remove('light-theme');
+//       document.body.classList.add('dark-theme');
+//       localStorage.setItem('theme', 'dark-theme');
+//     }
+//     updateButtonIcon();
+//   });
+// });

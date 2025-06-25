@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="frontend/styles.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <title>Devtools desabilitado!</title>
-  <!-- <style>
+  <style>
   
     * {
       margin: 0;
@@ -117,7 +117,7 @@
         padding: 10px 28px;
         margin-top: 18px;
       }
-    } -->
+    }
   </style>
 </head>
 <body>

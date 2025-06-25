@@ -13,20 +13,25 @@ session_start();
     <link rel="stylesheet" href="frontend/styles.css">
 </head>
 <body class="container">
-<!-- <script src="./frontend/js/script.js"></script>  -->
+<?php 
+$backUrl = null; // Use history.back()
+include 'backend/includes/back_button.php'; 
+?>
+<script src="frontend/js/script.js"></script>
 
     <div class="logo-container">
         <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
     </div> 
 
     <div class="button-group">
-    <h1><strong>Bem vindo <?php echo ($_SESSION['nome']);  ?></strong></h1>
-        <a href="backend/professores/index_prof.php">Adicionar Professor</a>
-        <a href="backend/alunos/index_al.php">Adicionar Aluno</a>
-        <a href="backend/livros/index_lv.php">Adicionar Livro </a>
-        <a href="backend/emprestimos/index_em.php">Adicionar Empréstimo</a>
-        <a href= "backend/alunos/listar_alunos.php"> Alunos cadastrados </a>
-        <a href="logoff.php"> sair </a>
+    <h1><strong class="text-shine">Bem vindo <?php echo ($_SESSION['nome']);  ?></strong></h1>
+        <a href="backend/professores/index_prof.php" class="btn btn-primary">Adicionar Professor</a>
+        <a href="backend/alunos/index_al.php" class="btn btn-primary">Adicionar Aluno</a>
+        <a href="backend/livros/index_lv.php" class="btn btn-primary">Adicionar Livro </a>
+        <a href="backend/emprestimos/index_em.php" class="btn btn-primary">Adicionar Empréstimo</a>
+        <a href= "backend/alunos/listar_alunos.php" class="btn btn-primary"> Alunos cadastrados </a>
+        <a href="backend/livros/relatorio_emprestimos.php" class="btn btn-primary">Relatórios de Empréstimos</a>
+        <a href="logoff.php" class="btn btn-primary"> sair </a>
     </div>
 
 <!-- Theme toggle button will be added dynamically by script.js -->

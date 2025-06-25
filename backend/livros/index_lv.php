@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Criar Novo Livro</title>
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../frontend/css/styles.css">
+        <link rel="stylesheet" href="../../frontend/styles.css">
     <script src="../../frontend/js/script.js"></script> 
     <style>
         .btn-custom{
@@ -17,6 +17,10 @@
     </style>
 </head>
 <body class="container">
+<?php 
+$backUrl = '../../inicial.php';
+include '../includes/back_button.php'; 
+?>
 
 
     <div class="img-container">

@@ -8,7 +8,11 @@
     <link rel="stylesheet" href="../../frontend/styles.css">
 </head>
 <body class="container">
-    <script src="../../frontend/js/script.js"></script> 
+<?php 
+$backUrl = '../../inicial.php';
+include '../includes/back_button.php'; 
+?>
+<script src="../../frontend/js/script.js"></script> 
     <div class="logo-container">
         <img src="../../frontend/css/img/logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: auto; margin-bottom: 0px;">
     </div> 

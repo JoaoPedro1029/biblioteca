@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Livros</title>
     <link rel="stylesheet" href="../../frontend/styles.css" />
+    <script src="../../frontend/js/script.js"></script>
 </head>
 <body>
-<div class="container">
-<?php
+<?php 
 session_start();
 include ('../../config.php'); // Inclui o arquivo de configuração
-
+$backUrl = '../../inicial.php';
+include '../includes/back_button.php'; 
 // Obtém os valores do formulário
 $searchQuery = isset($_POST['searchValue']) ? $_POST['searchValue'] : ''; // O ISBN, nome do autor ou título do livro que você quer pesquisar
 $searchType = isset($_POST['searchType']) ? $_POST['searchType'] : ''; // O tipo de busca (ISBN, autor, título)
@@ -93,7 +94,7 @@ if (!empty($searchQuery) && !empty($searchType)) {
             <input type="hidden" name="isbn" value="<?php echo $isbn; ?>">
             <button type="submit">Cadastrar Novo Livro</button>
         </form>
-
+        <hr>
 <?php
         }
     } else {
@@ -103,6 +104,5 @@ if (!empty($searchQuery) && !empty($searchType)) {
     // echo "Por favor, preencha todos os campos de busca.";
 }
 ?>
-</div>
 </body>
 </html>

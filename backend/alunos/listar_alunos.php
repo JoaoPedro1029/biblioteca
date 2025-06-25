@@ -48,11 +48,16 @@ try {
     </style>
 </head>
 <body>
+<?php 
+$backUrl = '../../inicial.php';
+include '../includes/back_button.php'; 
+?>
+<script src="../../frontend/js/script.js"></script>
 <div class="container">
     <h1>Lista de Alunos</h1>
     <input type="text" id="searchInput" placeholder="Pesquisar alunos..." aria-label="Pesquisar alunos" />
 
-    <table id="alunosTable" aria-describedby="Lista de alunos cadastrados">
+    <table id="alunosTable" aria-describedby="Lista de alunos cadastrados" class="table">
         <thead>
             <tr>
                 <th>Nome</th>
@@ -66,6 +71,11 @@ try {
                 <td><?= htmlspecialchars($aluno['nome']) ?></td>
                 <td><?= htmlspecialchars($aluno['serie']) ?></td>
                 <td><?= htmlspecialchars($aluno['email']) ?></td>
+                <style>
+                    .table{
+                        color: #000000;
+                    }
+                </style>
             </tr>
             <?php endforeach; ?>
         </tbody>

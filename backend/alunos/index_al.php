@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="../../frontend/styles.css">
 </head>
 <body class="container">
+<?php 
+$backUrl = '../../inicial.php';
+include '../includes/back_button.php'; 
+?>
 <script src="../../frontend/js/script.js"></script> 
     <div class="logo-container">
         <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
     </div> 
 
     <div class="button-group">
-        <h1>Adicionar Novo Aluno</h1>
+    <h1>Adicionar Novo Aluno</h1>
         <form action="criar_al.php" method="post">
             <label for="nome">Nome:</label>
             <input type="text" minlength="5" maxlength="40" id="nome" name="nome" required>
