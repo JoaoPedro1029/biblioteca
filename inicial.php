@@ -17,7 +17,7 @@ session_start();
 $backUrl = null; // Use history.back()
 include 'backend/includes/back_button.php'; 
 ?>
-<script src="frontend/js/script.js"></script>
+<!-- <script src="frontend/js/script.js"></script> -->
 
     <div class="logo-container">
         <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
@@ -30,6 +30,7 @@ include 'backend/includes/back_button.php';
         <a href="backend/livros/index_lv.php" class="btn btn-primary">Adicionar Livro </a>
         <a href="backend/emprestimos/index_em.php" class="btn btn-primary">Adicionar Empréstimo</a>
         <a href= "backend/alunos/listar_alunos.php" class="btn btn-primary"> Alunos cadastrados </a>
+        <a href="backend/professores/listar_professores.php" class="btn btn-primary">Professores cadastrados</a>
         <a href="backend/livros/relatorio_emprestimos.php" class="btn btn-primary">Relatórios de Empréstimos</a>
         <a href="logoff.php" class="btn btn-primary"> sair </a>
     </div>

@@ -6,23 +6,20 @@
             <title>Criar Novo Livro</title>
             <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="../../frontend/styles.css">
-    <script src="../../frontend/js/script.js"></script> 
+    <!-- <script src="../../frontend/js/script.js"></script>  -->
     <style>
         .btn-custom{
             width: 85%;
             height: 60px;
             margin: 25px;
         }
-
-    </style>
+       </style>
 </head>
 <body class="container">
 <?php 
 $backUrl = '../../inicial.php';
 include '../includes/back_button.php'; 
 ?>
-
-
     <div class="img-container">
         <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
     </div> 

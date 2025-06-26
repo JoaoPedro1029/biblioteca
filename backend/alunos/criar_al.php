@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Criar Aluno</title>
-    <link rel="stylesheet" href="../../frontend/css/styles.css" />
+    <link rel="stylesheet" href="../../frontend/styles.css" />
 </head>
 <body>
 <?php
@@ -30,10 +30,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Verifica se a consulta foi executada com sucesso.
     if ($executado) {
         // Se a execução for bem-sucedida, exibe a mensagem de sucesso.
-        echo "Novo aluno adicionado com sucesso!";
+        echo "<script>
+            alert('Aluno cadastrado com sucesso!');
+            window.location.href = '../../inicial.php';
+        </script>";
+        exit;
     } else {
         // Caso ocorra um erro na execução, exibe a mensagem de erro.
-        echo "Erro ao adicionar aluno.";
+        echo "<script>
+            alert('Erro ao cadastrar aluno.');
+            window.history.back();
+        </script>";
+        exit;
     }
 }
 ?>

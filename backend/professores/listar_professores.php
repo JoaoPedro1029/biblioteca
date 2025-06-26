@@ -2,12 +2,12 @@
 session_start();
 include '../../config.php';
 
-// Fetch all students from the database
+// Fetch all professors from the database
 try {
-    $stmt = $conn->query("SELECT id, nome, serie, email FROM alunos ORDER BY nome ASC");
-    $alunos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt = $conn->query("SELECT id, nome, cpf, email FROM professores ORDER BY nome ASC");
+    $professores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } catch (PDOException $e) {
-    die("Erro ao buscar alunos: " . $e->getMessage());
+    die("Erro ao buscar professores: " . $e->getMessage());
 }
 ?>
 
@@ -16,9 +16,8 @@ try {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Lista de Alunos</title>
+    <title>Lista de Professores</title>
     <link rel="stylesheet" href="../../frontend/styles.css" />
-    <script src="../../frontend/js/deleteUsers.js"></script>
     <style>
         #searchInput {
             margin-bottom: 15px;
@@ -31,8 +30,8 @@ try {
         }
         .container {
             color:rgb(0, 0, 0);
-            text-align: center;
             max-width: 900px;
+            text-align: center;
             margin: 0 auto;
             padding: 20px;
             background-color: #2c3e50;
@@ -41,6 +40,7 @@ try {
         }
         .table-container {
             max-height: 400px;
+            text-align: center;
             overflow-x: auto;
             margin-top: 10px;
             border: 1px solid #2980b9;
@@ -90,28 +90,27 @@ try {
 $backUrl = '../../inicial.php';
 include '../includes/back_button.php'; 
 ?>
-<!-- <script src="../../frontend/js/script.js"></script> -->
 <div class="container">
-    <h1>Lista de Alunos</h1>
-    <input type="text" id="searchInput" placeholder="Pesquisar alunos..." aria-label="Pesquisar alunos" />
+    <h1>Lista de Professores</h1>
+    <input type="text" id="searchInput" placeholder="Pesquisar professores..." aria-label="Pesquisar professores" />
     <div class="table-container">
-        <table id="alunosTable" aria-describedby="Lista de alunos cadastrados" class="table">
+        <table id="professoresTable" aria-describedby="Lista de professores cadastrados" class="table">
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>Série</th>
+                    <th>CPF</th>
                     <th>Email</th>
                     <th>Excluir</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($alunos as $aluno): ?>
-                <tr data-id="<?= htmlspecialchars($aluno['id']) ?>">
-                    <td><?= htmlspecialchars($aluno['nome']) ?></td>
-                    <td><?= htmlspecialchars($aluno['serie']) ?></td>
-                    <td><?= htmlspecialchars($aluno['email']) ?></td>
+                <?php foreach ($professores as $professor): ?>
+                <tr data-id="<?= htmlspecialchars($professor['id']) ?>">
+                    <td><?= htmlspecialchars($professor['nome']) ?></td>
+                    <td><?= htmlspecialchars($professor['cpf']) ?></td>
+                    <td><?= htmlspecialchars($professor['email']) ?></td>
                     <td>
-                        <button class="delete-btn" title="Excluir Aluno">
+                        <button class="delete-btn" title="Excluir Professor">
                             🗑️
                         </button>
                     </td>
@@ -124,16 +123,16 @@ include '../includes/back_button.php';
 
     <script>
     const searchInput = document.getElementById('searchInput');
-    const table = document.getElementById('alunosTable');
+    const table = document.getElementById('professoresTable');
     const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
 
     searchInput.addEventListener('input', function() {
         const filter = this.value.toLowerCase();
         for (let i = 0; i < rows.length; i++) {
             const nome = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
-            const serie = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
+            const cpf = rows[i].getElementsByTagName('td')[1].textContent.toLowerCase();
             const email = rows[i].getElementsByTagName('td')[2].textContent.toLowerCase();
-            if (nome.includes(filter) || serie.includes(filter) || email.includes(filter)) {
+            if (nome.includes(filter) || cpf.includes(filter) || email.includes(filter)) {
                 rows[i].style.display = '';
             } else {
                 rows[i].style.display = 'none';
@@ -141,6 +140,5 @@ include '../includes/back_button.php';
         }
     });
     </script>
-    
 </body>
 </html>

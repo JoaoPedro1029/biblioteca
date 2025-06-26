@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cadastro de Livros</title>
     <link rel="stylesheet" href="../../frontend/styles.css" />
-    <script src="../../frontend/js/script.js"></script>
+    <!-- <script src="../../frontend/js/script.js"></script> -->
 </head>
 <body>
 <?php 

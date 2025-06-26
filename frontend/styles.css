@@ -48,8 +48,9 @@ body::before {
 
 /* Container for forms and content */
 .container {
-    background-color: #ffffff;
+    background-color: #0b1a3d;
     max-width: 480px;
+    color: antiquewhite;
     width: 100%;
     padding: 30px 40px;
     border-radius: 8px;
@@ -58,7 +59,7 @@ body::before {
 }
 
 .container:hover {
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    box-shadow: 0 9px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Logo container */
@@ -76,8 +77,12 @@ body::before {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #2c3e50;
+    color: #16144d;
     text-align: center;
+}
+
+.button-group{
+    color:#0b1a3d
 }
 
 /* Form styles */
@@ -89,7 +94,7 @@ form {
 label {
     margin-bottom: 6px;
     font-weight: 600;
-    color: #34495e;
+    color: #000000;
 }
 
 input[type="text"],

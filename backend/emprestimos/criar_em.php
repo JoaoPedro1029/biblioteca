@@ -55,7 +55,6 @@ if (count($result_livro) > 0) {
     if ($stmt_emprestimo === false) {
         die("Erro na preparação da inserção: " . implode(", ", $conn->errorInfo()));
     }
-    var_dump($aluno_id);
     // Vincular os parâmetros
     $stmt_emprestimo->bindValue(':aluno_id', $aluno_id, PDO::PARAM_INT);
     $stmt_emprestimo->bindValue(':professor_id', $professor_id, PDO::PARAM_STR);
@@ -63,14 +62,19 @@ if (count($result_livro) > 0) {
     $stmt_emprestimo->bindValue(':data_retirada', $data_retirada, PDO::PARAM_STR);
     $stmt_emprestimo->bindValue(':data_devolucao', $data_devolucao, PDO::PARAM_STR);
 
-   
-
     if ($stmt_emprestimo->execute()) {
-        echo "<div class='container'>Empréstimo criado com sucesso!</div>";
+        echo "<script>
+            alert('Empréstimo criado com sucesso!');
+            window.location.href = '../../inicial.php';
+        </script>";
+        exit;
     } else {
-        echo "<div class='container'>Erro ao criar empréstimo: " . implode(", ", $stmt_emprestimo->errorInfo()) . "</div>";
+        echo "<script>
+            alert('Erro ao criar empréstimo: " . implode(", ", $stmt_emprestimo->errorInfo()) . "');
+            window.history.back();
+        </script>";
+        exit;
     }
- 
 
     // Liberar a declaração
     $stmt_emprestimo = null;
@@ -78,7 +82,11 @@ if (count($result_livro) > 0) {
     // Fechar a conexão
     $conn = null;
 } else {
-    echo "<div class='container'>Livro não encontrado</div>";
+    echo "<script>
+        alert('Livro não encontrado');
+        window.history.back();
+    </script>";
+    exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

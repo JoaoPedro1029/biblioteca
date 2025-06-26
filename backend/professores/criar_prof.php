@@ -17,24 +17,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Prepara a consulta para ser executada no banco de dados
     $stmt = $conn->prepare($sql);
     // Executa a consulta com os valores dos campos
-    $stmt->execute([$nome, $cpf, $email, $senha]);
-    // Exibe uma mensagem de sucesso
-    
-    // echo 'Professor adicionado com sucesso';
+    $executado = $stmt->execute([$nome, $cpf, $email, $senha]);
+
+    if ($executado) {
+        echo "<script>
+            alert('Professor cadastrado com sucesso!');
+            window.location.href = '../../inicial.php';
+        </script>";
+        exit;
+    } else {
+        echo "<script>
+            alert('Erro ao cadastrar professor.');
+            window.history.back();
+        </script>";
+        exit;
+    }
 }
 ?>
-
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro concluido</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="../../frontend/styles.css">
-        <link rel="stylesheet" href="../../frontend/js/script.js">
-    </head>
-    <body>
-    <div class="container">
-      <h1>Professor cadastrado com sucesso!</h1>     
-    </body>
-</html>

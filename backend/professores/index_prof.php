@@ -6,14 +6,12 @@
     <title>Adicionar Novo Professor</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
    <link rel="stylesheet" href = "../../frontend/styles.css">
+   <script src="../../frontend/js/script.js"></script> 
 </head>
 <body class="container">
     <div class="logo-container">
         <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
     </div>
-  <!-- Importa o arquivo JavaScript -->
-  <!-- <script src="../../frontend/css/efeitos.js"></script> -->
-     <script src="../../frontend/js/script.js"></script> 
      <div class="button-group">
     <h1>Adicionar Novo Professor</h1>
     <form action="./criar_prof.php" method="post">
