@@ -10,9 +10,9 @@
     <!-- <script src="./frontend/js/script.js"></script>  -->
 </head>
 <body>
-<div class="logo-container">
-    <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
-</div>
+    <div class="logo-container">
+        <img src="frontend/img/logoCury (1).png" alt="Logo da Biblioteca">
+    </div>
 
 <div class="container">
     <form action="login.php" method="post">

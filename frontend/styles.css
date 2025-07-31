@@ -69,7 +69,7 @@ body::before {
 }
 
 .logo-container img {
-    max-width: 180px;
+    max-width: 350px;
     height: auto;
 }
 
