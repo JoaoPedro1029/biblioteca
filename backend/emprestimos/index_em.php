@@ -14,10 +14,10 @@ include '../includes/back_button.php';
 ?>
 <!-- <script src="../../frontend/js/script.js"></script>  -->
     <div class="logo-container">
-        <img src="../../frontend/css/img/logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: auto; margin-bottom: 0px;">
+        <img src="../../frontend/img/logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: auto; margin-bottom: 0px;">
     </div> 
     <div class="button-group">
-        <h1>Adicionar Empréstimo</h1>
+        <h1 style="border-bottom: none;">Adicionar Empréstimo</h1>
         <form method="POST" action="./criar_em.php">
         <label for="aluno_nome">Nome do Aluno:</label>
         <input type="hidden" name="aluno_id" id="aluno_id" required>
@@ -58,6 +58,25 @@ include '../includes/back_button.php';
         .suggestion-item:hover {
             background-color: #2980b9;
             color: white;
+        }
+        
+        /* Uniformizar tamanho dos campos de data com os campos de texto */
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px 14px;
+            margin-bottom: 18px;
+            border: 1.8px solid #bdc3c7;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        input[type="text"]:focus,
+        input[type="date"]:focus {
+            border-color: #2980b9;
+            outline: none;
         }
     </style>
 
