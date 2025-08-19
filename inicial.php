@@ -20,7 +20,7 @@ include 'backend/includes/back_button.php';
 <!-- <script src="frontend/js/script.js"></script> -->
 
     <div class="logo-container">
-        <img src="frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca">
+        <img src="frontend/img/logoCury (1).png" alt="Logo da Biblioteca">
     </div> 
 
     <div class="button-group">

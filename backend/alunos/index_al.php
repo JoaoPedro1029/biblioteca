@@ -14,7 +14,7 @@ include '../includes/back_button.php';
 ?>
 <!-- <script src="../../frontend/js/script.js"></script>  -->
     <div class="logo-container">
-        <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
+        <img src="../../frontend/img/logoCury (1).png" alt="Logo da Biblioteca">
     </div> 
 
     <div class="button-group">

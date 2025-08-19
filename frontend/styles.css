@@ -16,7 +16,8 @@ body {
     align-items: center;
     padding: 20px;
     position: relative;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* Cosmic light effect overlay */
@@ -48,14 +49,17 @@ body::before {
 
 /* Container for forms and content */
 .container {
-    background-color: #0b1a3d;
-    max-width: 480px;
-    color: antiquewhite;
+    background-color: #181c4f;
+    max-width: 600px;
+    color: rgb(188, 0, 0);
     width: 100%;
     padding: 30px 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 20px auto;
 }
 
 .container:hover {
@@ -69,7 +73,7 @@ body::before {
 }
 
 .logo-container img {
-    max-width: 350px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -77,7 +81,7 @@ body::before {
 h1 {
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #16144d;
+    color: #f9f9f9;
     text-align: center;
 }
 
@@ -172,10 +176,22 @@ a:hover {
 
 /* Button container for links */
 .button-group {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: contents;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-group .btn-primary {
+    flex: 1 1 auto;
+    min-width: 180px;
+    max-width: 220px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    margin: 5px;
 }
 
 /* Responsive adjustments */

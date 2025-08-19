@@ -20,8 +20,8 @@
 $backUrl = '../../inicial.php';
 include '../includes/back_button.php'; 
 ?>
-    <div class="img-container">
-        <img src="../../frontend\css\img\logoCury (1).png" alt="Logo da Biblioteca" style="width: 400px; height: 100hv; margin-bottom: 0px;">
+    <div class="logo-container">
+        <img src="../../frontend/img/logoCury (1).png" alt="Logo da Biblioteca">
     </div> 
     <div class="button-container">
         <h1>Adicionar Novo Livro</h1>
